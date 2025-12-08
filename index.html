@@ -13,10 +13,291 @@
         }
 
         :root {
-            /* Cherry Red */
+            /* Default: Cherry Red (Dark) */
             --bg-gradient-start: #620f19;
             --bg-gradient-end: #260500;
             --accent-color: #acacac;
+            --text-primary: #ebebeb;
+            --text-secondary: #bdbdbd;
+            --card-bg: #000000;
+            --nav-bg: rgba(98, 15, 25, 0.95);
+            --timeline-line: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Light Theme 1: Classic Light */
+        [data-theme="light-classic"] {
+            --bg-gradient-start: #f5f5f5;
+            --bg-gradient-end: #e8e8e8;
+            --accent-color: #4a90e2;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(245, 245, 245, 0.95);
+            --timeline-line: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Light Theme 2: Soft Blue */
+        [data-theme="light-blue"] {
+            --bg-gradient-start: #e3f2fd;
+            --bg-gradient-end: #bbdefb;
+            --accent-color: #1976d2;
+            --text-primary: #1565c0;
+            --text-secondary: #424242;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(227, 242, 253, 0.95);
+            --timeline-line: rgba(25, 118, 210, 0.2);
+        }
+
+        /* Light Theme 3: Warm Beige */
+        [data-theme="light-beige"] {
+            --bg-gradient-start: #faf8f3;
+            --bg-gradient-end: #f5f1e8;
+            --accent-color: #8b6f47;
+            --text-primary: #3e2723;
+            --text-secondary: #5d4037;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(250, 248, 243, 0.95);
+            --timeline-line: rgba(139, 111, 71, 0.2);
+        }
+
+        /* Light Theme 4: Mint Green */
+        [data-theme="light-mint"] {
+            --bg-gradient-start: #e8f5e9;
+            --bg-gradient-end: #c8e6c9;
+            --accent-color: #2e7d32;
+            --text-primary: #1b5e20;
+            --text-secondary: #424242;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(232, 245, 233, 0.95);
+            --timeline-line: rgba(46, 125, 50, 0.2);
+        }
+
+        /* Light Theme 5: Lavender */
+        [data-theme="light-lavender"] {
+            --bg-gradient-start: #f3e5f5;
+            --bg-gradient-end: #e1bee7;
+            --accent-color: #7b1fa2;
+            --text-primary: #4a148c;
+            --text-secondary: #424242;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(243, 229, 245, 0.95);
+            --timeline-line: rgba(123, 31, 162, 0.2);
+        }
+
+        /* Light Theme 6: Peach */
+        [data-theme="light-peach"] {
+            --bg-gradient-start: #fff3e0;
+            --bg-gradient-end: #ffe0b2;
+            --accent-color: #e65100;
+            --text-primary: #bf360c;
+            --text-secondary: #5d4037;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(255, 243, 224, 0.95);
+            --timeline-line: rgba(230, 81, 0, 0.2);
+        }
+
+        /* Light Theme 7: Sky Blue */
+        [data-theme="light-sky"] {
+            --bg-gradient-start: #e0f7fa;
+            --bg-gradient-end: #b2ebf2;
+            --accent-color: #00838f;
+            --text-primary: #006064;
+            --text-secondary: #424242;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(224, 247, 250, 0.95);
+            --timeline-line: rgba(0, 131, 143, 0.2);
+        }
+
+        /* Light Theme 8: Rose */
+        [data-theme="light-rose"] {
+            --bg-gradient-start: #fce4ec;
+            --bg-gradient-end: #f8bbd0;
+            --accent-color: #c2185b;
+            --text-primary: #880e4f;
+            --text-secondary: #424242;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(252, 228, 236, 0.95);
+            --timeline-line: rgba(194, 24, 91, 0.2);
+        }
+
+        /* Dark Theme 1: Deep Blue */
+        [data-theme="dark-blue"] {
+            --bg-gradient-start: #0d1b2a;
+            --bg-gradient-end: #1b263b;
+            --accent-color: #4a9eff;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --card-bg: #0f1e2e;
+            --nav-bg: rgba(13, 27, 42, 0.95);
+            --timeline-line: rgba(74, 158, 255, 0.3);
+        }
+
+        /* Dark Theme 2: Forest Green */
+        [data-theme="dark-green"] {
+            --bg-gradient-start: #1a2e1a;
+            --bg-gradient-end: #0d1f0d;
+            --accent-color: #66bb6a;
+            --text-primary: #e8f5e9;
+            --text-secondary: #c8e6c9;
+            --card-bg: #1a2e1a;
+            --nav-bg: rgba(26, 46, 26, 0.95);
+            --timeline-line: rgba(102, 187, 106, 0.3);
+        }
+
+        /* Dark Theme 3: Royal Purple */
+        [data-theme="dark-purple"] {
+            --bg-gradient-start: #2d1b4e;
+            --bg-gradient-end: #1a0f2e;
+            --accent-color: #ab47bc;
+            --text-primary: #f3e5f5;
+            --text-secondary: #e1bee7;
+            --card-bg: #2d1b4e;
+            --nav-bg: rgba(45, 27, 78, 0.95);
+            --timeline-line: rgba(171, 71, 188, 0.3);
+        }
+
+        /* Dark Theme 4: Ocean Teal */
+        [data-theme="dark-teal"] {
+            --bg-gradient-start: #0d2b2b;
+            --bg-gradient-end: #051a1a;
+            --accent-color: #26a69a;
+            --text-primary: #e0f2f1;
+            --text-secondary: #b2dfdb;
+            --card-bg: #0d2b2b;
+            --nav-bg: rgba(13, 43, 43, 0.95);
+            --timeline-line: rgba(38, 166, 154, 0.3);
+        }
+
+        /* Dark Theme 5: Burnt Orange */
+        [data-theme="dark-orange"] {
+            --bg-gradient-start: #3e2723;
+            --bg-gradient-end: #1b0f0a;
+            --accent-color: #ff7043;
+            --text-primary: #fff3e0;
+            --text-secondary: #ffe0b2;
+            --card-bg: #3e2723;
+            --nav-bg: rgba(62, 39, 35, 0.95);
+            --timeline-line: rgba(255, 112, 67, 0.3);
+        }
+
+        /* Dark Theme 6: Charcoal Gray */
+        [data-theme="dark-gray"] {
+            --bg-gradient-start: #212121;
+            --bg-gradient-end: #121212;
+            --accent-color: #90caf9;
+            --text-primary: #f5f5f5;
+            --text-secondary: #bdbdbd;
+            --card-bg: #1e1e1e;
+            --nav-bg: rgba(33, 33, 33, 0.95);
+            --timeline-line: rgba(144, 202, 249, 0.3);
+        }
+
+        /* Dark Theme 7: Midnight Blue */
+        [data-theme="dark-midnight"] {
+            --bg-gradient-start: #1a237e;
+            --bg-gradient-end: #0d0f3d;
+            --accent-color: #7986cb;
+            --text-primary: #e8eaf6;
+            --text-secondary: #c5cae9;
+            --card-bg: #1a237e;
+            --nav-bg: rgba(26, 35, 126, 0.95);
+            --timeline-line: rgba(121, 134, 203, 0.3);
+        }
+
+        /* Mid Theme 1: Slate Blue */
+        [data-theme="mid-blue"] {
+            --bg-gradient-start: #546e7a;
+            --bg-gradient-end: #37474f;
+            --accent-color: #64b5f6;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --card-bg: #455a64;
+            --nav-bg: rgba(84, 110, 122, 0.95);
+            --timeline-line: rgba(100, 181, 246, 0.4);
+        }
+
+        /* Mid Theme 2: Sage Green */
+        [data-theme="mid-green"] {
+            --bg-gradient-start: #558b2f;
+            --bg-gradient-end: #33691e;
+            --accent-color: #aed581;
+            --text-primary: #ffffff;
+            --text-secondary: #e8f5e9;
+            --card-bg: #558b2f;
+            --nav-bg: rgba(85, 139, 47, 0.95);
+            --timeline-line: rgba(174, 213, 129, 0.4);
+        }
+
+        /* Mid Theme 3: Amethyst Purple */
+        [data-theme="mid-purple"] {
+            --bg-gradient-start: #6a1b9a;
+            --bg-gradient-end: #4a148c;
+            --accent-color: #ba68c8;
+            --text-primary: #ffffff;
+            --text-secondary: #f3e5f5;
+            --card-bg: #6a1b9a;
+            --nav-bg: rgba(106, 27, 154, 0.95);
+            --timeline-line: rgba(186, 104, 200, 0.4);
+        }
+
+        /* Mid Theme 4: Earth Brown */
+        [data-theme="mid-brown"] {
+            --bg-gradient-start: #5d4037;
+            --bg-gradient-end: #3e2723;
+            --accent-color: #a1887f;
+            --text-primary: #ffffff;
+            --text-secondary: #fff3e0;
+            --card-bg: #5d4037;
+            --nav-bg: rgba(93, 64, 55, 0.95);
+            --timeline-line: rgba(161, 136, 127, 0.4);
+        }
+
+        /* Mid Theme 5: Steel Gray */
+        [data-theme="mid-gray"] {
+            --bg-gradient-start: #616161;
+            --bg-gradient-end: #424242;
+            --accent-color: #90caf9;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --card-bg: #525252;
+            --nav-bg: rgba(97, 97, 97, 0.95);
+            --timeline-line: rgba(144, 202, 249, 0.4);
+        }
+
+        /* Mid Theme 6: Teal */
+        [data-theme="mid-teal"] {
+            --bg-gradient-start: #00695c;
+            --bg-gradient-end: #004d40;
+            --accent-color: #4db6ac;
+            --text-primary: #ffffff;
+            --text-secondary: #e0f2f1;
+            --card-bg: #00695c;
+            --nav-bg: rgba(0, 105, 92, 0.95);
+            --timeline-line: rgba(77, 182, 172, 0.4);
+        }
+
+        /* Mid Theme 7: Indigo */
+        [data-theme="mid-indigo"] {
+            --bg-gradient-start: #3949ab;
+            --bg-gradient-end: #283593;
+            --accent-color: #7986cb;
+            --text-primary: #ffffff;
+            --text-secondary: #e8eaf6;
+            --card-bg: #3949ab;
+            --nav-bg: rgba(57, 73, 171, 0.95);
+            --timeline-line: rgba(121, 134, 203, 0.4);
+        }
+
+        /* Mid Theme 8: Rust */
+        [data-theme="mid-rust"] {
+            --bg-gradient-start: #d84315;
+            --bg-gradient-end: #bf360c;
+            --accent-color: #ff8a65;
+            --text-primary: #ffffff;
+            --text-secondary: #ffe0b2;
+            --card-bg: #d84315;
+            --nav-bg: rgba(216, 67, 21, 0.95);
+            --timeline-line: rgba(255, 138, 101, 0.4);
         }
 
         body {
@@ -32,7 +313,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-start) 80%, transparent 100%);
+            background: linear-gradient(180deg, var(--nav-bg) 0%, var(--nav-bg) 80%, transparent 100%);
             z-index: 100;
             padding: 20px 0;
             backdrop-filter: blur(10px);
@@ -80,12 +361,27 @@
             border: 2px solid transparent;
         }
 
+        [data-theme^="light"] .nav-link {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
         .nav-link:hover {
             color: white;
             background: rgba(255, 255, 255, 0.1);
         }
 
+        [data-theme^="light"] .nav-link:hover {
+            color: var(--text-primary);
+            background: rgba(0, 0, 0, 0.05);
+        }
+
         .nav-link.active {
+            color: white;
+            background: var(--accent-color);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme^="light"] .nav-link.active {
             color: white;
             background: var(--accent-color);
             border-color: rgba(255, 255, 255, 0.3);
@@ -109,14 +405,18 @@
         .decade-title {
             font-size: 4rem;
             font-weight: 800;
-            color: white;
+            color: var(--text-primary);
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: -2px;
             margin-bottom: 20px;
         }
 
+        [data-theme^="light"] .decade-title {
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
         .decade-subtitle {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             font-size: 1.2rem;
             font-weight: 300;
         }
@@ -158,7 +458,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--timeline-line);
             z-index: 1;
         }
 
@@ -169,7 +469,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: rgba(255, 255, 255, 0.3);
+            background: var(--timeline-line);
             z-index: 1;
             transform: translateX(-50%);
         }
@@ -197,7 +497,7 @@
             padding: 6px 14px;
             border-radius: 15px;
             font-weight: 600;
-            color: #ebebeb;
+            color: var(--text-primary);
             font-size: 0.85rem;
             display: inline-block;
             margin-bottom: 12px;
@@ -205,7 +505,7 @@
         }
 
         .event-card {
-            background: black;
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -215,13 +515,22 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        [data-theme^="light"] .event-card {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
         .event-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
 
+        [data-theme^="light"] .event-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
         .event-title {
-            color: #ebebeb;
+            color: var(--text-primary);
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 12px;
@@ -229,7 +538,7 @@
         }
 
         .event-description {
-            color: #bdbdbd;
+            color: var(--text-secondary);
             line-height: 1.6;
             font-size: 0.95rem;
             flex-grow: 1;
@@ -250,6 +559,11 @@
         }
 
         .event-link:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        [data-theme^="light"] .event-link:hover {
             background: var(--accent-color);
             color: white;
         }
@@ -403,10 +717,124 @@
         .decade-section {
             min-height: 50vh;
         }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme^="light"] .theme-switcher {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-switcher-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .theme-select {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-color);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            padding-right: 32px;
+        }
+
+        [data-theme^="light"] .theme-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        }
+
+        .theme-select:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+
+            .theme-switcher-label {
+                font-size: 0.7rem;
+                margin-bottom: 6px;
+            }
+
+            .theme-select {
+                font-size: 0.85rem;
+                padding: 6px 28px 6px 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <label class="theme-switcher-label" for="theme-select">Theme</label>
+        <select id="theme-select" class="theme-select">
+            <optgroup label="Dark Themes">
+                <option value="default">Cherry Red (Default)</option>
+                <option value="dark-blue">Deep Blue</option>
+                <option value="dark-green">Forest Green</option>
+                <option value="dark-purple">Royal Purple</option>
+                <option value="dark-teal">Ocean Teal</option>
+                <option value="dark-orange">Burnt Orange</option>
+                <option value="dark-gray">Charcoal Gray</option>
+                <option value="dark-midnight">Midnight Blue</option>
+            </optgroup>
+            <optgroup label="Mid-Tone Themes">
+                <option value="mid-blue">Slate Blue</option>
+                <option value="mid-green">Sage Green</option>
+                <option value="mid-purple">Amethyst Purple</option>
+                <option value="mid-brown">Earth Brown</option>
+                <option value="mid-gray">Steel Gray</option>
+                <option value="mid-teal">Teal</option>
+                <option value="mid-indigo">Indigo</option>
+                <option value="mid-rust">Rust</option>
+            </optgroup>
+            <optgroup label="Light Themes">
+                <option value="light-classic">Classic Light</option>
+                <option value="light-blue">Soft Blue</option>
+                <option value="light-beige">Warm Beige</option>
+                <option value="light-mint">Mint Green</option>
+                <option value="light-lavender">Lavender</option>
+                <option value="light-peach">Peach</option>
+                <option value="light-sky">Sky Blue</option>
+                <option value="light-rose">Rose</option>
+            </optgroup>
+        </select>
+    </div>
+
     <!-- Sticky Navigation -->
     <nav class="sticky-nav">
         <div class="nav-container">
@@ -1480,6 +1908,22 @@
     </div>
 
     <script>
+        // Theme Switcher Functionality
+        const themeSelect = document.getElementById('theme-select');
+        const htmlElement = document.documentElement;
+
+        // Load saved theme from localStorage
+        const savedTheme = localStorage.getItem('timeline-theme') || 'default';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeSelect.value = savedTheme;
+
+        // Handle theme change
+        themeSelect.addEventListener('change', (e) => {
+            const selectedTheme = e.target.value;
+            htmlElement.setAttribute('data-theme', selectedTheme);
+            localStorage.setItem('timeline-theme', selectedTheme);
+        });
+
         // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.decade-section');
