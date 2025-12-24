@@ -192,6 +192,18 @@
             --timeline-line: rgba(144, 202, 249, 0.3);
         }
 
+        /* Dark Theme 6 Variant: Black Cards with Dark Grey Background */
+        [data-theme="dark-gray-black"] {
+            --bg-gradient-start: #2d2d2d;
+            --bg-gradient-end: #0f0f0f;
+            --accent-color: #90caf9;
+            --text-primary: #f5f5f5;
+            --text-secondary: #bdbdbd;
+            --card-bg: #000000;
+            --nav-bg: rgba(45, 45, 45, 0.95);
+            --timeline-line: rgba(144, 202, 249, 0.3);
+        }
+
         /* Dark Theme 7: Midnight Blue */
         [data-theme="dark-midnight"] {
             --bg-gradient-start: #1a237e;
@@ -302,7 +314,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            background: radial-gradient(ellipse at center, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             background-attachment: fixed;
             min-height: 100vh;
         }
@@ -313,7 +325,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(180deg, var(--nav-bg) 0%, var(--nav-bg) 80%, transparent 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
             z-index: 100;
             padding: 20px 0;
             backdrop-filter: blur(10px);
@@ -377,13 +389,13 @@
 
         .nav-link.active {
             color: white;
-            background: var(--accent-color);
+            background: #1a95f8;
             border-color: rgba(255, 255, 255, 0.3);
         }
 
         [data-theme^="light"] .nav-link.active {
             color: white;
-            background: var(--accent-color);
+            background: #1a95f8;
             border-color: rgba(255, 255, 255, 0.3);
         }
 
@@ -434,7 +446,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             position: relative;
-            justify-items: center;
+            justify-items: stretch;
         }
 
         /* Desktop Timeline Lines - Create lines for each row of cards */
@@ -494,15 +506,19 @@
         }
 
         .event-date {
-            background: none;
+            background: #2A2A2A;
             padding: 6px 14px;
             border-radius: 15px;
             font-weight: 600;
             color: var(--text-primary);
             font-size: 0.85rem;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 5;
         }
 
         .event-card {
@@ -510,8 +526,9 @@
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            height: 300px;
-            width: 400px;
+            height: 375px;
+            width: 100%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -547,7 +564,6 @@
         }
 
         .event-card:hover {
-            transform: translateY(-5px);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
 
@@ -557,8 +573,9 @@
 
         .event-title {
             color: var(--text-primary);
-            font-size: 1.25rem;
+            font-size: 1.2em;
             font-weight: 700;
+            margin-top: 50px;
             margin-bottom: 12px;
             line-height: 1.3;
         }
@@ -615,7 +632,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(45, 45, 45, 0.85);
             backdrop-filter: blur(5px);
         }
 
@@ -725,6 +742,8 @@
 
         .events-stack .event-item {
             margin-bottom: 40px;
+            width: 100%;
+            max-width: 400px;
         }
 
         /* Responsive Design */
@@ -816,17 +835,17 @@
             }
         }
 
-        /* Tablet and below: up to 1024px get 250px height */
+        /* Tablet and below: up to 1024px get 313px height */
         @media (max-width: 1024px) {
             .event-card {
-                height: 250px;
+                height: 313px;
             }
         }
 
-        /* Desktop: above 1024px get 300px height */
+        /* Desktop: above 1024px get 375px height */
         @media (min-width: 1025px) {
             .event-card {
-                height: 300px;
+                height: 375px;
             }
         }
 
@@ -846,13 +865,16 @@
 
             .event-card {
                 padding: 16px;
-                height: 250px;
-                width: 100%;
-                max-width: 400px;
+                height: 313px;
+            }
+
+            .event-date {
+                top: 16px;
+                left: 16px;
             }
 
             .event-title {
-                font-size: 1.15rem;
+                font-size: 1.1em;
             }
 
             .event-description {
@@ -1082,8 +1104,8 @@
     </div>
 
     <script>
-        // Set theme to Charcoal Gray (dark-gray)
-        document.documentElement.setAttribute('data-theme', 'dark-gray');
+        // Set theme to Black Cards with Dark Grey Background
+        document.documentElement.setAttribute('data-theme', 'dark-gray-black');
 
         // ============================================
         // CENTRALIZED TIMELINE DATA
@@ -1101,19 +1123,19 @@
   "1920s": [
     {
       date: "1926",
-      title: "CJRM hits the airwaves. Located at 665 on the dial with 500 watts of power and owned by Grain merchants James Richardson and Sons Ltd.",
-      description: "The very beginning of what would become CKRM all started in Moose Jaw on July 27, 1926. The transmitter and studios were situated in the Richardson Building in the heart of the city. CJRM had a power of 500 watts and was located at 665 kHz on the dial.",
+      title: "CJRM hits the airwaves",
+      description: "Located at 665 on the dial with 500 watts of power and owned by Grain merchants James Richardson and Sons Ltd. The very beginning of what would become CKRM all started in Moose Jaw on July 27, 1926. The transmitter and studios were situated in the Richardson Building in the heart of the city. CJRM had a power of 500 watts and was located at 665 kHz on the dial.",
       link: "#"
     },
     {
       date: "1928",
-      title: "CJRM's frequency was changed to 880 kHz",
+      title: "CJRM's frequency changes to 880 kHz",
       description: "",
       link: "#"
     },
     {
       date: "1928",
-      title: "The Richardsons opened CJRW with a transmitter at Fleming Saskatchewan",
+      title: "The Richardsons open CJRW",
       description: "The transmitter was in Fleming, just west of the Manitoba-Saskatchewan border. Studios were in Winnipeg. They used these stations to provide farmers and grain elevator operators in the \"Breadbasket of Canada\" with up-to-the-minute grain and market prices and a variety entertainment programs.",
       link: "#"
     }
@@ -1121,7 +1143,7 @@
   "1930s": [
     {
       date: "1933",
-      title: "James Richardson and Sons moved to obtain federal permission to operate a studio in Regina",
+      title: "James Richardson and Sons move to obtain federal permission to operate a studio in Regina",
       description: "",
       link: "#"
     },
@@ -1133,7 +1155,7 @@
     },
     {
       date: "1934",
-      title: "CJRM's transmitter moved to Belle Plain with a 1,000 watt signal on a new frequency of 540 kHz",
+      title: "CJRM's transmitter moves to Belle Plain with a 1,000 watt signal on a new frequency of 540 kHz",
       description: "CKRM held the coveted spot of 540 on the AM dial. With the new transmitter located halfway between Moose Jaw and Regina, it would be shared by both studios. The CPR broadcast line to Fleming was extended to Regina, and the three studios (in Winnipeg, Regina and Moose Jaw), exchanged some programs from their cities.",
       link: "#"
     },
@@ -1147,19 +1169,19 @@
   "1940s": [
     {
       date: "1940",
-      title: "A change in ownership brings new challenges. TransCanada Communications run by Victor Sifton and family, bought the radio division of James Richardson & Sons Ltd (CJRC Winnipeg and CJRM Regina) from the Richardson Estate",
-      description: "",
+      title: "A change in ownership brings new challenges",
+      description: "TransCanada Communications run by Victor Sifton and family, bought the radio division of James Richardson & Sons Ltd (CJRC Winnipeg and CJRM Regina) from the Richardson Estate",
       link: "#"
     },
     {
       date: "1940",
-      title: "More movement on the dial as CJRM moved from 960 to 950 kHz",
+      title: "More movement on the dial as CJRM moves from 960 to 950 kHz",
       description: "",
       link: "#"
     },
     {
       date: "1941",
-      title: "CJRM changed its frequency from 950 kHz to 980 kHz",
+      title: "CJRM changes its frequency from 950 kHz to 980 kHz",
       description: "The change was made in accordance with the implementation of the Havana Treaty. So much change made it challenging to secure a following and identity. But loyal listeners came along for the ride. To meet growing demands for network time during the evenings, largely due to the war, the CBC set up a second network for commercial sponsorship. The network's first sponsor (on an experimental basis) was the Gillette Safety Razor Co. The Mutual Broadcasting System originated boxing events for 26 Canadian stations through the CBC, plus the MBS affiliate – CKLW Windsor. The second network had 23 Canadian stations with alternative stations in Montreal to meet local conditions there. The new network would operate only after 6:00 p.m. Eastern Time. Over the past year, private stations had been anxious to have such a network – outside of CBC control. However, under the Radio Act, the CBC had full control over all networks in the country. It was felt that a full second network with full day and night programming was not feasible or economically possible at this time. CBC-owned stations affiliated with the new network: CBK Watrous, CBA Sackville and CBY Toronto. Privately-owned stations affiliated with the new network were: CJOR Vancouver, CHWK Chilliwack, CFCN Calgary, CFRN Edmonton, CJRM Regina, CJGX Yorkton, CJRC Winnipeg, CKCA Kenora, CJIC Sault Ste Marie, CKOC Hamilton, CKTB St. Catherines, CFPL London, CFCO Chatham, CKLW Windsor, CKCR Kitchener, CKCO Ottawa, CFCF or CHLP Montreal, CHLT Sherbrooke, CKNB Campbellton, and CJLS Yarmouth.",
       link: "#"
     },
@@ -1171,58 +1193,58 @@
     },
     {
       date: "1944",
-      title: "Ad slogan: CKRM – The Saskatchewan Farmer Station",
-      description: "",
+      title: "New Ad slogan debuts",
+      description: "\"CKRM – The Saskatchewan Farmer Station\"",
       link: "#"
     },
     {
       date: "1947",
-      title: "The Saturday Night Amateur Hour hits the road and CKRM signal is strengthens to 5K watts",
+      title: "The Saturday Night Amateur Hour hits the road and CKRM signal is strengthened to 5K watts",
       description: "The end of the war brought changes to radio programing. In 1947 the crew was on the road with The Saturday Night Amateur Hour, broadcasting from small town Saskatchewan. They traveled to towns like Stoughton, Davidson, Weyburn and Francis, raising thousands of dollars for the Associated Canadian Travelers Tuberculosis Prevention Fund.",
       link: "#"
     },
     {
       date: "1949",
-      title: "Ad slogan \"Saskatchewan's Favourite Listening Post\"",
-      description: "",
+      title: "New Ad slogan debuts",
+      description: "\"Saskatchewan's Favourite Listening Post\"",
       link: "#"
     }
   ],
   "1950s": [
     {
       date: "1950",
-      title: "Ad slogan: CKRM for Saskatchewan. CKRM used \"RM the Program Man\" in its print advertising.",
-      description: "",
+      title: "New Ad slogan debuts",
+      description: "\CKRM for Saskatchewan\". CKRM used \"RM the Program Man\" in its print advertising.",
       link: "#"
     },
     {
       date: "1951",
       title: "CKRM turns 25",
-      description: "According to a print ad, CKRM was getting ready to mark its Silver Anniversary…from 50 watts to 5,000…from CJRM to CKRM…from 1926 to 1951… giving service to advertisers and listeners in Saskatchewan. From another ad: Since the day we commenced transmission with 50 watts, our station has grown to be a leader in Saskatchewan. Our faithful listeners and successful advertisers are invited to \"keep tuned to the Centre Aisle on Your Radio Dial…\" CKRM 980 KC Regina – 1926-1951.",
+      description: "According to a print ad, CKRM was getting ready to mark its Silver Anniversary...from 50 watts to 5,000...from CJRM to CKRM...from 1926 to 1951...giving service to advertisers and listeners in Saskatchewan. From another ad: Since the day we commenced transmission with 50 watts, our station has grown to be a leader in Saskatchewan. Our faithful listeners and successful advertisers are invited to \"keep tuned to the Centre Aisle on Your Radio Dial…\" CKRM 980 KC Regina – 1926-1951.",
       link: "#"
     },
     {
       date: "1954",
-      title: "CKRM opened new studios in June. At this time, the station employed 42 people.",
-      description: "Ad slogans: Don't let your sales slip. Secure your advertising on CKRM on the hard-hitting…far reaching 980 frequency. / People Choose CKRM Radio Regina.",
+      title: "CKRM opens new studios in June.",
+      description: "At this time, the station employed 42 people. Ad slogans: Don't let your sales slip. Secure your advertising on CKRM on the hard-hitting…far reaching 980 frequency. / People Choose CKRM Radio Regina.",
       link: "#"
     },
     {
       date: "1955",
-      title: "Ad slogans: The Golden Voice of Saskatchewan. / When you want to reach the Booming Saskatchewan Market, the most important step in any campaign is to contact CKRM Regina.",
-      description: "",
+      title: "A New Ad slogan debuts",
+      description: "\"The Golden Voice of Saskatchewan\". \"When you want to reach the Booming Saskatchewan Market, the most important step in any campaign is to contact CKRM Regina.\"",
       link: "#"
     },
     {
       date: "1957",
-      title: "CKRM 980 was a CBC Dominion Basic affiliate. Ownership of Western Communications Ltd",
-      description: "",
+      title: "CKRM 980 is a CBC Dominion Basic affiliate",
+      description: "Ownership of Western Communications Ltd.",
       link: "#"
     },
     {
       date: "1958",
       title: "Under Western Communications Ltd ownership, CKRM gets a major boost in power to 10,000 watts",
-      description: "According to Elliott-Haynes CKRM reached a total of 105,912 adult listeners every day. CKRM 980 applied for a power increase from 5,000 watts full-time (directional at night) to 10,000 watts day and 5,000 watts night (two directional patterns). The CBC Board of Governors recommended the application for deferral pending further evidence of improved local programming. After three applications, the power increase finally took place later in the year. Three 250 foot towers were used.",
+      description: "According to Elliott-Haynes, CKRM reached a total of 105,912 adult listeners every day. CKRM 980 applied for a power increase from 5,000 watts full-time (directional at night) to 10,000 watts day and 5,000 watts night (two directional patterns). The CBC Board of Governors recommended the application for deferral pending further evidence of improved local programming. After three applications, the power increase finally took place later in the year. Three 250 foot towers were used.",
       link: "#"
     }
   ],
@@ -1236,8 +1258,8 @@
     },
     {
       date: "1962",
-      title: "The Dominion and Trans-Canada networks consolidated into a single CBC Radio network. CKRM's affiliation with the network came to an end.",
-      description: "",
+      title: "The Dominion and Trans-Canada networks consolidate into a single CBC Radio network",
+      description: "CKRM's affiliation with the network came to an end.",
       link: "#"
     }
   ],
@@ -1250,13 +1272,13 @@
         },
         {
             date: "1974",
-            title: "On May 31, Buffalo Broadcasting was authorized to purchase CFMQ-FM from Metropolitan Broadcasting Ltd. CKRM now had a sister FM station.",
-            description: "",
+            title: "On May 31, Buffalo Broadcasting is authorized to purchase CFMQ-FM from Metropolitan Broadcasting Ltd.",
+            description: "CKRM now has a sister FM station.",
             link: ""
         },
         {
             date: "1976",
-            title: "CKRM Celebrates 50th anniversary",
+            title: "CKRM Celebrates its 50th anniversary",
             description: "“175,000 listeners can’t be wrong, keep up the good country!” That was a message of congratulations from Molson’s Sask Brewery LTD in honour of CKRM reaching the fifty-year milestone in 1976.  Staff members marked the occasion by producing a commemorative album titled \"Your Brand of Country” featuring the music stylings of twelve home grown artists.  The album was available through CKRM and Pinders Drug Store – now a classic collector’s item. Regina Mayor Terry Van Elson proclaims March 26, 1976, CKRM day in the Queen City. ",
             link: ""
         }
@@ -1264,56 +1286,56 @@
     "1980s": [
         {
             date: "1981",
-            title: "Harvard Developments Ltd purchases CKRM and it’s sister FM station from Buffalo Broadcasting; 980 frequency, 10K watts of power. ",
-            description: "",
+            title: "Harvard Developments Ltd purchases CKRM and it’s sister FM station from Buffalo Broadcasting",
+            description: "980 frequency, 10K watts of power.",
             link: ""
         },
         {
             date: "1982",
-            title: "On March 1st Harvard Developments Ltd. (controlled by the Hill family of Regina) bought CKRM-AM and CFMQ-FM from Buffalo Broadcasting. Harvard owned CKCK-TV at this time. They acquired the TV station in 1977 from Armadale Communications.",
-            description: "",
+            title: "On March 1st Harvard Developments Ltd. (controlled by the Hill family of Regina) buys CKRM-AM and CFMQ-FM from Buffalo Broadcasting",
+            description: "Harvard owned CKCK-TV at this time. They acquired the TV station in 1977 from Armadale Communications.",
             link: ""
         }
     ],
     "1990s": [
         {
             date: "1990",
-            title: "CKRM’s license was renewed for only two years because the CRTC had concerns over the placement of Canadian content. ",
-            description: "",
+            title: "CKRM’s license renewed for only two years",
+            description: "The short renewal was due to CRTC concerns over the placement of Canadian content.",
             link: ""
         },
         {
             date: "1995",
-            title: "CKRM kicks off the first Country Cookout, celebrating the hardworking producers across Saskatchewan by bringing a meal and entertainment right to the farm.",
-            description: "",
+            title: "CKRM kicks off the first Country Cookout",
+            description: "The Cookout celebrates the hardworking producers across Saskatchewan by bringing a meal and entertainment right to the farm.",
             link: ""
         }
     ],
     "2000s": [
         {
             date: "2001",
-            title: "Harvard Broadcasting takes ownership and CKRM makes a significant move on the dial from 980 to 620 with 10K watts of power.",
+            title: "Harvard Broadcasting takes ownership of CKRM",
             description: "On November 30, the CRTC approved an application whereby Harvard was able to purchase the assets of CKCK and CKWF-FM. and for CKRM to occupy CKCK’s 620 frequency using the CKCK transmitter. In CKWF-FM, Harvard also acquired its second FM station in the Regina market, ending up with one AM station and two FM stations. CKRM’s transmitter on 980 kHz was acquired by RAWLCO Communications which surrendered its AM license for CJME on 1300 kHz. CKCK 620 left the air at midnight, October 1. CKCK was replaced on the 620 frequency by CKRM. ",
             link: ""
         },
         {
             date: "2003",
-            title: "On February 20 the CRTC authorized Harvard Broadcasting to operate a network originating from CKRM. ",
-            description: ") The new network would broadcast regional and provincial news and information of interest to residents of Saskatchewan including open-line shows. It proposed to broadcast a maximum of 15 to 20 programs a year from one to four hours in duration. The network license would be in effect until August 31, 2009",
+            title: "On February 20, the CRTC authorizes Harvard Broadcasting to operate a network originating from CKRM",
+            description: "The new network would broadcast regional and provincial news and information of interest to residents of Saskatchewan including open-line shows. It proposed to broadcast a maximum of 15 to 20 programs a year from one to four hours in duration. The network license would be in effect until August 31, 2009",
             link: ""
         },
         {
             date: "2006",
-            title: "CKRM and its sister FM station were on the move; from the location on Haliffax street to the current home in the heart of downtown Regina on Rose Street. ",
-            description: "",
+            title: "CKRM and its sister FM station are on the move",
+            description: "The move was from Halifax street to the current home in the heart of downtown Regina on Rose Street.",
             link: ""
         }
     ],
     "2010s": [
         {
             date: "2010",
-            title: "CKRM changed its format from Country to a mix of Country music and sports. ",
-            description: "On June 30, the CRTC renewed the broadcasting license for the English-language commercial radio station CKRM Regina from 1 July 2010 to 31 August 2013.",
+            title: "CKRM changes its format",
+            description: "CKRM shifts from Country to a mix of Country music and sports. On June 30, the CRTC renewed the broadcasting license for the English-language commercial radio station CKRM Regina from 1 July 2010 to 31 August 2013.",
             link: ""
         }
     ]
@@ -1324,8 +1346,8 @@
         function generateEventHTML(event) {
             return `
                     <div class="event-item">
-                        <div class="event-date">${escapeHtml(event.date)}</div>
                         <div class="event-card">
+                            <div class="event-date">${escapeHtml(event.date)}</div>
                             <h3 class="event-title">${escapeHtml(event.title)}</h3>
                             <p class="event-description">${escapeHtml(event.description)}</p>
                             <a href="${escapeHtml(event.link)}" class="event-link" onclick="return false;">Read More →</a>
@@ -1649,6 +1671,7 @@
                 card.classList.remove('fade-out');
                 
                 // Get all content elements
+                const date = card.querySelector('.event-date');
                 const title = card.querySelector('.event-title');
                 const description = card.querySelector('.event-description');
                 const link = card.querySelector('.event-link');
@@ -1659,6 +1682,13 @@
                 const href = link.getAttribute('href');
                 const hasRealLink = href && href !== '#' && href !== '' && !href.startsWith('#');
                 
+                // Get the actual computed card height and padding BEFORE modifying styles
+                const computedStyle = getComputedStyle(card);
+                const cardHeight = parseFloat(computedStyle.height);
+                const cardPaddingTop = parseFloat(computedStyle.paddingTop) || 0;
+                const cardPaddingBottom = parseFloat(computedStyle.paddingBottom) || 0;
+                const cardPadding = cardPaddingTop + cardPaddingBottom;
+                
                 // Temporarily change overflow to measure actual content height
                 const originalOverflow = card.style.overflow;
                 const originalHeight = card.style.height;
@@ -1666,38 +1696,26 @@
                 card.style.height = 'auto';
                 
                 // Measure total content height
+                // Include date button if it exists (it's absolutely positioned but takes up space)
+                const dateHeight = date ? date.offsetHeight : 0;
+                const dateMarginBottom = date ? (parseInt(getComputedStyle(date).marginBottom) || 0) : 0;
                 const titleHeight = title.offsetHeight;
+                const titleMarginTop = parseInt(getComputedStyle(title).marginTop) || 0;
                 const titleMarginBottom = parseInt(getComputedStyle(title).marginBottom) || 0;
                 const descHeight = description.offsetHeight;
                 const descMarginBottom = parseInt(getComputedStyle(description).marginBottom) || 0;
                 const linkHeight = link.offsetHeight;
                 const linkMarginTop = parseInt(getComputedStyle(link).marginTop) || 0;
                 
-                const totalContentHeight = titleHeight + titleMarginBottom + 
+                // Calculate total content height including all margins
+                const totalContentHeight = dateHeight + dateMarginBottom +
+                                         titleMarginTop + titleHeight + titleMarginBottom + 
                                          descHeight + descMarginBottom + 
-                                         linkHeight + linkMarginTop;
+                                         linkMarginTop + linkHeight;
                 
                 // Restore original styles
                 card.style.overflow = originalOverflow || 'hidden';
                 card.style.height = originalHeight || '';
-                
-                // Detect viewport size and set appropriate card height and padding
-                const viewportWidth = window.innerWidth;
-                let cardHeight, cardPadding;
-                
-                if (viewportWidth <= 768) {
-                    // Mobile: 250px height, 16px padding (32px total)
-                    cardHeight = 250;
-                    cardPadding = 32;
-                } else if (viewportWidth <= 1024) {
-                    // Tablet: 250px height, 20px padding (40px total)
-                    cardHeight = 250;
-                    cardPadding = 40;
-                } else {
-                    // Desktop: 300px height, 20px padding (40px total)
-                    cardHeight = 300;
-                    cardPadding = 40;
-                }
                 
                 const availableHeight = cardHeight - cardPadding;
                 
@@ -1864,4 +1882,3 @@ i    </script>
 </body>
 
 </html>
- 
