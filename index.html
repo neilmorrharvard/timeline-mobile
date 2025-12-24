@@ -204,6 +204,18 @@
             --timeline-line: rgba(144, 202, 249, 0.3);
         }
 
+        /* Dark Theme 6 Variant Reversed: Dark Grey Cards with Darker Background */
+        [data-theme="dark-gray-reversed"] {
+            --bg-gradient-start: #1a1a1a;
+            --bg-gradient-end: #0a0a0a;
+            --accent-color: #90caf9;
+            --text-primary: #f5f5f5;
+            --text-secondary: #bdbdbd;
+            --card-bg: #1e1e1e;
+            --nav-bg: rgba(26, 26, 26, 0.95);
+            --timeline-line: rgba(144, 202, 249, 0.3);
+        }
+
         /* Dark Theme 7: Midnight Blue */
         [data-theme="dark-midnight"] {
             --bg-gradient-start: #1a237e;
@@ -1104,8 +1116,8 @@
     </div>
 
     <script>
-        // Set theme to Black Cards with Dark Grey Background
-        document.documentElement.setAttribute('data-theme', 'dark-gray-black');
+        // Set theme to Dark Grey Cards with Darker Background (Reversed)
+        document.documentElement.setAttribute('data-theme', 'dark-gray-reversed');
 
         // ============================================
         // CENTRALIZED TIMELINE DATA
